@@ -29,8 +29,8 @@
 @property(nonatomic,readonly) CGFloat screenViewY;
 @property(nonatomic,readonly) CGRect screenFrame;
 
-@property(nonatomic,readonly) CGFloat orientationWidth;
-@property(nonatomic,readonly) CGFloat orientationHeight;
+//@property(nonatomic,readonly) CGFloat orientationWidth;
+//@property(nonatomic,readonly) CGFloat orientationHeight;
 
 - (void)removeSubviews;
 - (CGPoint)centerOfFrame;

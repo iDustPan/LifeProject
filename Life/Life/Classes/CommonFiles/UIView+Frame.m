@@ -174,15 +174,15 @@ UIInterfaceOrientation TTDeviceOrientation() {
     return CGPointMake(x, y);
 }
 
-- (CGFloat)orientationWidth {
-    return UIDeviceOrientationIsLandscape(TTDeviceOrientation())
-    ? self.height : self.width;
-}
-
-- (CGFloat)orientationHeight {
-    return UIDeviceOrientationIsLandscape(TTDeviceOrientation())
-    ? self.width : self.height;
-}
+//- (CGFloat)orientationWidth {
+//    return UIDeviceOrientationIsLandscape(TTDeviceOrientation())
+//    ? self.height : self.width;
+//}
+//
+//- (CGFloat)orientationHeight {
+//    return UIDeviceOrientationIsLandscape(TTDeviceOrientation())
+//    ? self.width : self.height;
+//}
 
 - (CGPoint)centerOfFrame {
     CGRect rect = self.frame;
@@ -239,10 +239,10 @@ UIInterfaceOrientation TTDeviceOrientation() {
 
 - (void)showLineWithRect:(CGRect)rect inSuperView:(UIView *)superView
 {
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:rect];
-    imgView.image = [UIImage imageNamed:@"fengexian_03"];
-    imgView.height = 1;
-    [superView addSubview:imgView];
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = [UIColor colorWithRed:220.0/255 green:220.0/255 blue:220.0/255 alpha:1.0].CGColor;
+    layer.frame = rect;
+    [superView.layer addSublayer:layer];
 }
 
 - (UIView *)findFirstResponder{

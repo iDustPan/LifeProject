@@ -9,11 +9,16 @@
 #ifndef LifePrefixHeader_pch
 #define LifePrefixHeader_pch
 
+#import <masonry.h>
+#import <MJExtension.h>
+
 #import "SpeedyCode.h"
 #import "SpeedyFrame.h"
 #import "XPNet.h"
 
 
 #import "UIView+Frame.h"
+#import "NSString+SizeToFit.h"
+#import "HDFHud.h"
 
 #endif /* LifePrefixHeader_pch */

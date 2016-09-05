@@ -9,11 +9,20 @@
 #ifndef SpeedyCode_h
 #define SpeedyCode_h
 
+
+// rgb颜色转换（16进制->10进制）
+#define HexColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 /**
  * 快速加载图片
  */
 #define kImageWithName(Name) ([UIImage imageNamed:Name])
 #define kBigImageWithName(Name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:Name ofType:nil]])
+
+/**
+ *  快速设置字体大小
+ */
+#define kFontWithSize(size) ([UIFont systemFontOfSize:size])
 
 /**
  * 快速访问系统自带的singleton
