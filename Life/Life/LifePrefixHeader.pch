@@ -1,0 +1,19 @@
+//
+//  LifePrefixHeader.pch
+//  Life
+//
+//  Created by 徐攀 on 16/9/5.
+//  Copyright © 2016年 iDustpan. All rights reserved.
+//
+
+#ifndef LifePrefixHeader_pch
+#define LifePrefixHeader_pch
+
+#import "SpeedyCode.h"
+#import "SpeedyFrame.h"
+#import "XPNet.h"
+
+
+#import "UIView+Frame.h"
+
+#endif /* LifePrefixHeader_pch */

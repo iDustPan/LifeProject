@@ -7,19 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XPResponse.h"
 #import <AFNetworking.h>
+
 
 typedef NS_ENUM(NSUInteger, RequestType) {
     Get = 0,
     Post,
 };
 
-typedef void(^SuccessBlock)(id reponse);
-typedef void(^FailBlock)(id errorMsg, id reponse);
+typedef void(^SuccessBlock)(XPResponse *reponse);
+typedef void(^FailBlock)(NSString *errorMsg, XPResponse *reponse);
 
 @interface XPNet : NSObject
-
+/** 请求最大时间 */
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
+
+/** 响应结果 */
+@property (nonatomic, strong) XPResponse *response;
 
 + (instancetype)sharedNet;
 
