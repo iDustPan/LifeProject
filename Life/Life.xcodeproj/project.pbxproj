@@ -16,6 +16,7 @@
 		792122AF1D7D20E8001C23AD /* XPNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122AC1D7D20E8001C23AD /* XPNewsViewController.m */; };
 		792122B51D7D20F4001C23AD /* XPJokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122B21D7D20F4001C23AD /* XPJokeViewController.m */; };
 		792122BB1D7D20FB001C23AD /* XPMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122B81D7D20FB001C23AD /* XPMineViewController.m */; };
+		792122BE1D7D4A40001C23AD /* XPNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122BD1D7D4A40001C23AD /* XPNet.m */; };
 		E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		792122B21D7D20F4001C23AD /* XPJokeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPJokeViewController.m; sourceTree = "<group>"; };
 		792122B71D7D20FB001C23AD /* XPMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPMineViewController.h; sourceTree = "<group>"; };
 		792122B81D7D20FB001C23AD /* XPMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPMineViewController.m; sourceTree = "<group>"; };
+		792122BC1D7D4A40001C23AD /* XPNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPNet.h; sourceTree = "<group>"; };
+		792122BD1D7D4A40001C23AD /* XPNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPNet.m; sourceTree = "<group>"; };
 		CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Life.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8ED45B850634A9CC086D2D1 /* Pods-Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,9 +111,9 @@
 				7921228B1D7D1548001C23AD /* AppDelegate */,
 				7921228E1D7D1548001C23AD /* Network */,
 				792122A31D7D1E91001C23AD /* Base */,
-				792122991D7D1CA4001C23AD /* Me */,
-				792122981D7D1C33001C23AD /* Joke */,
 				792122971D7D1BEE001C23AD /* News */,
+				792122981D7D1C33001C23AD /* Joke */,
+				792122991D7D1CA4001C23AD /* Me */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -127,6 +130,8 @@
 		7921228E1D7D1548001C23AD /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				792122BC1D7D4A40001C23AD /* XPNet.h */,
+				792122BD1D7D4A40001C23AD /* XPNet.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792122A91D7D1EA9001C23AD /* XPMainTabBarController.m in Sources */,
+				792122BE1D7D4A40001C23AD /* XPNet.m in Sources */,
 				7921227B1D7D11A8001C23AD /* main.m in Sources */,
 				7921228F1D7D1548001C23AD /* AppDelegate.m in Sources */,
 				792122B51D7D20F4001C23AD /* XPJokeViewController.m in Sources */,

@@ -18,9 +18,7 @@
 - (instancetype)init
 {
     if (!(self = [super init])) return nil;
-    
     [self configureChildVC];
-    
     return self;
 }
 
