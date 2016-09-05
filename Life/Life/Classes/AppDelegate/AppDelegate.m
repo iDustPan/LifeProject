@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XPMainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    XPMainTabBarController *mainRootVC = [[XPMainTabBarController alloc] init];
+    self.window.rootViewController = mainRootVC;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
