@@ -10,6 +10,7 @@
 #import "NewsModel.h"
 
 @implementation NewsListFrame
+MJCodingImplementation
 
 - (instancetype)initWithModel:(NewsModel *)model
 {
@@ -98,5 +99,11 @@ CGSize dateSize(NewsModel *model) {
 CGSize imageSize() {
     return CGSizeMake((kScreenWidth - 20) / 4, 240.0 / 320 * ((kScreenWidth - 20) / 4));
 }
+
++ (NSArray *)mj_allowedCodingPropertyNames
+{
+    return @[@"newsLabelFrame", @"image1Frame", @"dateFrame", @"sourceFrame", @"newsModel", @"cellHeight"];
+}
+
 
 @end

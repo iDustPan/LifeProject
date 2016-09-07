@@ -87,6 +87,15 @@
     label.textColor = [UIColor redColor];
     _selectedLabel = label;
     
+    CGFloat offsetX = (label.centerX - kScreenWidth * 0.5);
+    if (offsetX < 0) {
+        offsetX = 0;
+    }
+    
+    if (offsetX > (self.backScroll.contentSize.width - kScreenWidth)) {
+        offsetX = self.backScroll.contentSize.width - kScreenWidth;
+    }
+    [self.backScroll setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
 - (UIScrollView *)backScroll

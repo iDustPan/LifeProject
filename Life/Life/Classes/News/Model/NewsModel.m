@@ -10,6 +10,5 @@
 
 @implementation NewsModel
 
-
-
+MJCodingImplementation
 @end

@@ -11,6 +11,7 @@
 #import "NewsListFrame.h"
 #import "NewsModel.h"
 #import "NewsListCell.h"
+#import "DataManager.h"
 
 #define kNewsAppKey @"fadeac5f79237ff20be82b8ef912cd49"
 #define kNewsPath @"/toutiao/index"
@@ -30,7 +31,18 @@
 
 - (void)refreshNewsListWithTitle:(NSString *)title
 {
-    [self p_requstNewsDataWithKey:title];
+    // 1.先看本地有无数据，如果有先从本地加载；
+    // 2.如果本地没有，从网络加载；
+    // 3.网络加载后把数据存本地；
+    [[DataManager sharedManager] loadDataWithKey:title successBlock:^(id result) {
+        AppLog(@"%@", result);
+            if (result == nil) {
+                [self p_requstNewsDataWithKey:title];
+                return ;
+            }
+            _dataSource = result;
+            [self reloadTableView];
+    }];
 }
 
 - (void)p_requstNewsDataWithKey:(NSString *)key
@@ -39,26 +51,37 @@
     NSDictionary *parame = @{@"key": kNewsAppKey, @"type": key};
     [[XPNet sharedNet] requestAtPath:kNewsPath type:Get params:parame success:^(XPResponse *reponse) {
         if (!kIsInvalidDict(reponse.result)) {
-            [self p_handleData:reponse.result[@"data"]];
+            [self p_handleData:reponse.result[@"data"] withKey:key];
         }
     } failBlock:^(id errorMsg, XPResponse *reponse) {
         
     }];
 }
 
-- (void)p_handleData:(NSArray *)dataArr
+
+- (void)p_handleData:(NSArray *)dataArr withKey:(NSString *)key
 {
     _dataSource = [NewsModel mj_objectArrayWithKeyValuesArray:dataArr];
     
     NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:42];
-    [_dataSource enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NewsListFrame *frameModel = [[NewsListFrame alloc] initWithModel:obj];
-        [tempArr addObject:frameModel];
-    }];
-    
-    _dataSource = tempArr.copy;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [_dataSource enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NewsListFrame *frameModel = [[NewsListFrame alloc] initWithModel:obj];
+            [tempArr addObject:frameModel];
+        }];
+        
+        [[DataManager sharedManager] saveData:tempArr withKey:key];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _dataSource = tempArr.copy;
+            [self reloadTableView];
+            [HDFHud dismiss];
+        });
+    });
+}
+
+- (void)reloadTableView
+{
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-    [HDFHud dismiss];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -85,7 +108,8 @@
 {
     NewsModel *model = [_dataSource[indexPath.row] newsModel];
     NewsDetailViewController *detailVC = [[NewsDetailViewController alloc] initWithURL:[NSURL URLWithString:model.url]];
-//    [self showViewController:detailVC sender:self];
+    UINavigationController *nav = [UIApplication sharedApplication].keyWindow.rootViewController.childViewControllers[0];
+    [nav pushViewController:detailVC animated:YES];
 }
 
 @end

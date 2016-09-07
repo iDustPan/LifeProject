@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class NewsModel;
-@interface NewsListFrame : NSObject
+@interface NewsListFrame : NSObject<NSCoding>
 
 
 @property (nonatomic, strong) NewsModel *newsModel;
