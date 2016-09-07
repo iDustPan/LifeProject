@@ -17,7 +17,7 @@
 
 #define kTitles @[@"头条", @"社会", @"国内", @"国际", @"娱乐", @"体育", @"军事", @"科技", @"财经", @"时尚"]
 
-@interface XPNewsViewController ()<TopScrollTabDelegate>
+@interface XPNewsViewController ()<TopScrollTabDelegate, NewsCollectionContainerDelegate>
 
 @property (nonatomic, strong) TopScrollTab *topTab;
 
@@ -34,7 +34,6 @@
     [self p_configureUI];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     [self topScrollTabDidSelectedTitle:@"top" atIndex:0];
 }
 
@@ -46,7 +45,8 @@
 
 - (void)addNewsContainer
 {
-    _container = [[NewsCollectionContainer alloc] init];
+    _container = [[NewsCollectionContainer alloc] initWithTitleArray:kTitles];
+    _container.changeDelegate = self;
     [self addChildViewController:_container];
     _container.collectionView.frame = CGRectMake(0, kNavBarHeight + 44, kScreenWidth, kScreenHeight - 108 -49);
     [self.view addSubview:_container.collectionView];
@@ -54,7 +54,10 @@
     [_container didMoveToParentViewController:self];
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView moveToItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_topTab selectTitleAtIndex:indexPath.item];
+}
 
 -(void)topScrollTabDidSelectedTitle:(NSString *)title atIndex:(NSInteger)index
 {

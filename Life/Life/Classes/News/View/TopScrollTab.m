@@ -76,6 +76,9 @@
 {
     UILabel *label = (UILabel *)sender.view;
     [self handleTapAction:label];
+    if (self.tapDelegate && [self.tapDelegate respondsToSelector:@selector(topScrollTabDidSelectedTitle:atIndex:)]) {
+        [self.tapDelegate topScrollTabDidSelectedTitle:label.text atIndex:[self.backScroll.subviews indexOfObject:label]];
+    }
 }
 
 - (void)handleTapAction:(UILabel *)label
@@ -84,9 +87,6 @@
     label.textColor = [UIColor redColor];
     _selectedLabel = label;
     
-    if (self.tapDelegate && [self.tapDelegate respondsToSelector:@selector(topScrollTabDidSelectedTitle:atIndex:)]) {
-        [self.tapDelegate topScrollTabDidSelectedTitle:label.text atIndex:[self.backScroll.subviews indexOfObject:label]];
-    }
 }
 
 - (UIScrollView *)backScroll

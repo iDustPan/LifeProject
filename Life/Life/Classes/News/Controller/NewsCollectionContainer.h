@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol NewsCollectionContainerDelegate;
 @interface NewsCollectionContainer : UICollectionViewController
 
 @property (nonatomic, assign) NSInteger cellCount;
 
+@property (nonatomic, weak) id<NewsCollectionContainerDelegate> changeDelegate;
+
+- (instancetype)initWithTitleArray:(NSArray *)titleArr;
 - (void)refreshNewsWithTitle:(NSString *)title selectedItem:(NSInteger)index;
+
+@end
+
+@protocol NewsCollectionContainerDelegate <NSObject>
+
+- (void)collectionView:(UICollectionView *)collectionView moveToItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

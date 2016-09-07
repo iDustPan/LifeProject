@@ -57,7 +57,7 @@
     }];
     
     _dataSource = tempArr.copy;
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
     [HDFHud dismiss];
 }
 
