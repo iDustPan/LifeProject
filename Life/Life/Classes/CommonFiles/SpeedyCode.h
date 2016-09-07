@@ -12,7 +12,7 @@
 
 // rgb颜色转换（16进制->10进制）
 #define HexColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
+#define RandomColor [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1]
 /**
  * 快速加载图片
  */
@@ -47,7 +47,7 @@
 #define kIsInvalidDict(objDict) (objDict == nil || ![objDict isKindOfClass:[NSDictionary class]])
 // 是否是无效数组
 #define kIsInvalidArray(objArray) (objArray == nil || ![objArray isKindOfClass:[NSArray class]])
-
+#define kIsEqualToString(str1, str2) ([str1 isEqualToString:str2])
 // Log
 #ifdef DEBUG
 #define AppLog(s, ... ) NSLog( @"[%@：in line: %d]-->[message: %@]", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )

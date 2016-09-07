@@ -1,5 +1,5 @@
 //
-//  NewsListViewController.h
+//  NewsCollectionCell.h
 //  Life
 //
 //  Created by 徐攀 on 16/9/6.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsListViewController : UITableViewController
+@interface NewsCollectionCell : UICollectionViewCell
 
-- (void)refreshNewsListWithTitle:(NSString *)title;
+@property (nonatomic, strong) NSString *title;
 
 @end

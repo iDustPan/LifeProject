@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSArray *titles;
 
+@property (nonatomic, strong) UILabel *selectedLabel;
+
 @end
 
 @implementation TopScrollTab
@@ -26,6 +28,12 @@
         [self p_configureUIWithTitles:titles];
     }
     return self;
+}
+
+- (void)selectTitleAtIndex:(NSInteger)index
+{
+    UILabel *label = self.backScroll.subviews[index];
+    [self handleTapAction:label];
 }
 
 - (void)p_configureUIWithTitles:(NSArray *)titles
@@ -67,8 +75,17 @@
 - (void)tapTitleAction:(UITapGestureRecognizer *)sender
 {
     UILabel *label = (UILabel *)sender.view;
-    if (self.tapDelegate && [self.tapDelegate respondsToSelector:@selector(topScrollTabDidSelectedTitle:)]) {
-        [self.tapDelegate topScrollTabDidSelectedTitle:label.text];
+    [self handleTapAction:label];
+}
+
+- (void)handleTapAction:(UILabel *)label
+{
+    _selectedLabel.textColor = [UIColor blackColor];
+    label.textColor = [UIColor redColor];
+    _selectedLabel = label;
+    
+    if (self.tapDelegate && [self.tapDelegate respondsToSelector:@selector(topScrollTabDidSelectedTitle:atIndex:)]) {
+        [self.tapDelegate topScrollTabDidSelectedTitle:label.text atIndex:[self.backScroll.subviews indexOfObject:label]];
     }
 }
 
@@ -77,6 +94,7 @@
     if (!_backScroll) {
         _backScroll = [[UIScrollView alloc] init];
         _backScroll.frame = CGRectMake(0, 0, kScreenWidth, 44);
+        _backScroll.backgroundColor = HexColor(0x7bffa6);
         _backScroll.showsHorizontalScrollIndicator = NO;
         [self addSubview:_backScroll];
     }

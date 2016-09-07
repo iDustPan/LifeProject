@@ -11,6 +11,7 @@
 
 #import <masonry.h>
 #import <MJExtension.h>
+#import <UIImageView+WebCache.h>
 
 #import "SpeedyCode.h"
 #import "SpeedyFrame.h"

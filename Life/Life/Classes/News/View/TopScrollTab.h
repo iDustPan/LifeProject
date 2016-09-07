@@ -16,10 +16,12 @@
 
 - (instancetype)initWithTitles:(NSArray *)titles;
 
+- (void)selectTitleAtIndex:(NSInteger)index;
+
 @end
 
 @protocol TopScrollTabDelegate <NSObject>
 
-- (void)topScrollTabDidSelectedTitle:(NSString *)title;
+- (void)topScrollTabDidSelectedTitle:(NSString *)title atIndex:(NSInteger)index;
 
 @end

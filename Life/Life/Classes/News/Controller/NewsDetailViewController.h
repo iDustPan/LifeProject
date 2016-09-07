@@ -1,5 +1,5 @@
 //
-//  NewsListViewController.h
+//  NewsDetailViewController.h
 //  Life
 //
 //  Created by 徐攀 on 16/9/6.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsListViewController : UITableViewController
+@interface NewsDetailViewController : UIViewController
 
-- (void)refreshNewsListWithTitle:(NSString *)title;
+- (instancetype)initWithURL:(NSURL *)URL;
 
 @end

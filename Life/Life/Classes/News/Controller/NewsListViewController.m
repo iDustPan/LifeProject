@@ -2,11 +2,18 @@
 //  NewsListViewController.m
 //  Life
 //
-//  Created by 徐攀 on 16/9/5.
+//  Created by 徐攀 on 16/9/6.
 //  Copyright © 2016年 iDustpan. All rights reserved.
 //
 
 #import "NewsListViewController.h"
+#import "NewsDetailViewController.h"
+#import "NewsListFrame.h"
+#import "NewsModel.h"
+#import "NewsListCell.h"
+
+#define kNewsAppKey @"fadeac5f79237ff20be82b8ef912cd49"
+#define kNewsPath @"/toutiao/index"
 
 @interface NewsListViewController ()
 
@@ -18,84 +25,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerClass:NewsListCell.class forCellReuseIdentifier:NSStringFromClass(NewsListCell.class)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)reloadListWithDataSource:(NSArray *)dataSource
+- (void)refreshNewsListWithTitle:(NSString *)title
 {
-    _dataSource = dataSource;
-    NSIndexSet *indexset = [NSIndexSet indexSetWithIndex:0];
-    [self.tableView reloadSections:indexset withRowAnimation:UITableViewRowAnimationTop];
+    [self p_requstNewsDataWithKey:title];
 }
 
-#pragma mark - Table view data source
+- (void)p_requstNewsDataWithKey:(NSString *)key
+{
+    [HDFHud show];
+    NSDictionary *parame = @{@"key": kNewsAppKey, @"type": key};
+    [[XPNet sharedNet] requestAtPath:kNewsPath type:Get params:parame success:^(XPResponse *reponse) {
+        if (!kIsInvalidDict(reponse.result)) {
+            [self p_handleData:reponse.result[@"data"]];
+        }
+    } failBlock:^(id errorMsg, XPResponse *reponse) {
+        
+    }];
+}
+
+- (void)p_handleData:(NSArray *)dataArr
+{
+    _dataSource = [NewsModel mj_objectArrayWithKeyValuesArray:dataArr];
+    
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:42];
+    [_dataSource enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NewsListFrame *frameModel = [[NewsListFrame alloc] initWithModel:obj];
+        [tempArr addObject:frameModel];
+    }];
+    
+    _dataSource = tempArr.copy;
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    [HDFHud dismiss];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataSource.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    NewsListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(NewsListCell.class) forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)configureCell:(NewsListCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    cell.frameModel = _dataSource[indexPath.row];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [_dataSource[indexPath.row] cellHeight];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewsModel *model = [_dataSource[indexPath.row] newsModel];
+    NewsDetailViewController *detailVC = [[NewsDetailViewController alloc] initWithURL:[NSURL URLWithString:model.url]];
+//    [self showViewController:detailVC sender:self];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
