@@ -97,7 +97,7 @@ CGSize dateSize(NewsModel *model) {
 }
 
 CGSize imageSize() {
-    return CGSizeMake((kScreenWidth - 20) / 4, 240.0 / 320 * ((kScreenWidth - 20) / 4));
+    return CGSizeMake((kScreenWidth - 20) / 3, 240.0 / 320 * ((kScreenWidth - 20) / 3));
 }
 
 + (NSArray *)mj_allowedCodingPropertyNames

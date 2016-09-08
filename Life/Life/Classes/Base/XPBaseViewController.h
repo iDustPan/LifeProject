@@ -2,12 +2,12 @@
 //  XPBaseViewController.h
 //  Life
 //
-//  Created by 徐攀 on 16/9/5.
+//  Created by 徐攀 on 16/9/7.
 //  Copyright © 2016年 iDustpan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface XPBaseViewController : UINavigationController
+@interface XPBaseViewController : UIViewController
 
 @end

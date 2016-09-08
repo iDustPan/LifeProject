@@ -109,6 +109,10 @@
     return _topTab;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 
 @end

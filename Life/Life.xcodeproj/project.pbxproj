@@ -11,7 +11,6 @@
 		792122801D7D11A8001C23AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7921227F1D7D11A8001C23AD /* Assets.xcassets */; };
 		792122831D7D11A8001C23AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792122811D7D11A8001C23AD /* LaunchScreen.storyboard */; };
 		7921228F1D7D1548001C23AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7921228D1D7D1548001C23AD /* AppDelegate.m */; };
-		792122A81D7D1EA9001C23AD /* XPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122A61D7D1EA9001C23AD /* XPBaseViewController.m */; };
 		792122A91D7D1EA9001C23AD /* XPMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122A71D7D1EA9001C23AD /* XPMainTabBarController.m */; };
 		792122AF1D7D20E8001C23AD /* XPNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122AC1D7D20E8001C23AD /* XPNewsViewController.m */; };
 		792122B51D7D20F4001C23AD /* XPJokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122B21D7D20F4001C23AD /* XPJokeViewController.m */; };
@@ -29,7 +28,10 @@
 		792122E61D7EB597001C23AD /* NewsCollectionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122E51D7EB597001C23AD /* NewsCollectionContainer.m */; };
 		792122E91D7EC04B001C23AD /* NewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122E81D7EC04B001C23AD /* NewsCollectionCell.m */; };
 		792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122EB1D7ED15D001C23AD /* NewsListViewController.m */; };
+		7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */; };
 		799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9C1D7FEA9C0009919D /* DataManager.m */; };
+		799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9F1D8010110009919D /* XPBaseViewController.m */; };
+		799CDEA21D8011550009919D /* WebViewTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799CDEA11D8011550009919D /* WebViewTabBar.xib */; };
 		E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +44,7 @@
 		792122841D7D11A8001C23AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7921228C1D7D1548001C23AD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7921228D1D7D1548001C23AD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		792122A41D7D1EA9001C23AD /* XPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseViewController.h; sourceTree = "<group>"; };
 		792122A51D7D1EA9001C23AD /* XPMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPMainTabBarController.h; sourceTree = "<group>"; };
-		792122A61D7D1EA9001C23AD /* XPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPBaseViewController.m; sourceTree = "<group>"; };
 		792122A71D7D1EA9001C23AD /* XPMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPMainTabBarController.m; sourceTree = "<group>"; };
 		792122AB1D7D20E8001C23AD /* XPNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPNewsViewController.h; sourceTree = "<group>"; };
 		792122AC1D7D20E8001C23AD /* XPNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPNewsViewController.m; sourceTree = "<group>"; };
@@ -81,8 +81,13 @@
 		792122E81D7EC04B001C23AD /* NewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionCell.m; sourceTree = "<group>"; };
 		792122EA1D7ED15D001C23AD /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
 		792122EB1D7ED15D001C23AD /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
+		792438291D8143E4002B4CE1 /* XPBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseNavViewController.h; sourceTree = "<group>"; };
+		7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPBaseNavViewController.m; sourceTree = "<group>"; };
 		799CDE9B1D7FEA9C0009919D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		799CDE9C1D7FEA9C0009919D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		799CDE9E1D8010110009919D /* XPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseViewController.h; sourceTree = "<group>"; };
+		799CDE9F1D8010110009919D /* XPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPBaseViewController.m; sourceTree = "<group>"; };
+		799CDEA11D8011550009919D /* WebViewTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewTabBar.xib; sourceTree = "<group>"; };
 		CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Life.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8ED45B850634A9CC086D2D1 /* Pods-Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,10 +235,12 @@
 		792122A31D7D1E91001C23AD /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				792122A41D7D1EA9001C23AD /* XPBaseViewController.h */,
-				792122A61D7D1EA9001C23AD /* XPBaseViewController.m */,
 				792122A51D7D1EA9001C23AD /* XPMainTabBarController.h */,
 				792122A71D7D1EA9001C23AD /* XPMainTabBarController.m */,
+				799CDE9E1D8010110009919D /* XPBaseViewController.h */,
+				799CDE9F1D8010110009919D /* XPBaseViewController.m */,
+				792438291D8143E4002B4CE1 /* XPBaseNavViewController.h */,
+				7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -273,6 +280,7 @@
 				792122D91D7DA8D7001C23AD /* NewsListCell.m */,
 				792122E71D7EC04B001C23AD /* NewsCollectionCell.h */,
 				792122E81D7EC04B001C23AD /* NewsCollectionCell.m */,
+				799CDEA11D8011550009919D /* WebViewTabBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 			files = (
 				792122801D7D11A8001C23AD /* Assets.xcassets in Resources */,
 				792122831D7D11A8001C23AD /* LaunchScreen.storyboard in Resources */,
+				799CDEA21D8011550009919D /* WebViewTabBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,15 +481,16 @@
 				792122C11D7D58ED001C23AD /* XPResponse.m in Sources */,
 				7921228F1D7D1548001C23AD /* AppDelegate.m in Sources */,
 				792122B51D7D20F4001C23AD /* XPJokeViewController.m in Sources */,
-				792122A81D7D1EA9001C23AD /* XPBaseViewController.m in Sources */,
 				792122D11D7D8B1E001C23AD /* NewsModel.m in Sources */,
 				792122AF1D7D20E8001C23AD /* XPNewsViewController.m in Sources */,
 				792122BB1D7D20FB001C23AD /* XPMineViewController.m in Sources */,
 				799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */,
 				792122CB1D7D6E9A001C23AD /* UIView+Frame.m in Sources */,
+				7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */,
 				792122E61D7EB597001C23AD /* NewsCollectionContainer.m in Sources */,
 				792122E31D7EAF20001C23AD /* NewsDetailViewController.m in Sources */,
 				792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */,
+				799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

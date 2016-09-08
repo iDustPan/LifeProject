@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XPNewsViewController : UIViewController
+@interface XPNewsViewController : XPBaseViewController
 
 @end

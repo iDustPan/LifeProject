@@ -36,6 +36,7 @@
 
 - (void)requestAtPath:(NSString *)path type:(RequestType)type params:(NSDictionary *)parame success:(SuccessBlock)success failBlock:(FailBlock)fail
 {
+    [HDFHud show];
     void(^mySuccess)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (!kIsInvalidDict(responseObject)) {
             _response = [[XPResponse alloc] initWithDict:responseObject];
@@ -44,13 +45,14 @@
                 return ;
             }
             !success ?: success(_response);
+            [HDFHud dismiss];
         }
     };
     
     void(^myFail)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
         if (error != nil) {
             !fail ?: fail([error localizedDescription], nil);
-            AppLog(@"%@", [error localizedDescription]);
+            [HDFHud showNetworkError:[error localizedDescription]];
         }
     };
     

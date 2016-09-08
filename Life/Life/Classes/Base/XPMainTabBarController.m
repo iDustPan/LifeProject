@@ -7,7 +7,7 @@
 //
 
 #import "XPMainTabBarController.h"
-#import "XPBaseViewController.h"
+#import "XPBaseNavViewController.h"
 #import "XPMineViewController.h"
 #import "XPJokeViewController.h"
 #import "XPNewsViewController.h"
@@ -40,7 +40,7 @@
 
 - (void)configureTab:(UIViewController *)vc
 {
-    XPBaseViewController *nav = [[XPBaseViewController alloc] initWithRootViewController:vc];
+    XPBaseNavViewController *nav = [[XPBaseNavViewController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
 }
 @end

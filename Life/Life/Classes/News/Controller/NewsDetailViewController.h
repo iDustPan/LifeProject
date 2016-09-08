@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsDetailViewController : UIViewController
+@interface NewsDetailViewController : XPBaseViewController
 
 - (instancetype)initWithURL:(NSURL *)URL;
 

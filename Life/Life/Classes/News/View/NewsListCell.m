@@ -19,29 +19,36 @@
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *sourceLabel;
 
+@property (nonatomic, strong) CALayer *separator;
+
 @end
 
 @implementation NewsListCell
 
 
-//- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-//{
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-//    
-//    if (!self) return nil;
-//    
-//    return self;
-//}
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (!self) return nil;
+    
+    _separator = [CALayer layer];
+    _separator.backgroundColor = HexColor(0xdcdcdc).CGColor;
+    [self.contentView.layer addSublayer:_separator];
+    
+    return self;
+}
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     self.newsLabel.frame = _frameModel.newsLabelFrame;
     self.image1.frame = _frameModel.image1Frame;
-    self.image2.frame = _frameModel.image2Frame;
-    self.image3.frame = _frameModel.image3Frame;
+//    self.image2.frame = _frameModel.image2Frame;
+//    self.image3.frame = _frameModel.image3Frame;
     self.sourceLabel.frame = _frameModel.sourceFrame;
     self.dateLabel.frame = _frameModel.dateFrame;
+    self.separator.frame = CGRectMake(0, _frameModel.cellHeight - 0.5, kScreenWidth, 0.5);
 }
 
 
@@ -50,10 +57,11 @@
     _frameModel = frameModel;
     self.newsLabel.text = frameModel.newsModel.title;
     [self.image1 sd_setImageWithURL:[NSURL URLWithString:frameModel.newsModel.thumbnail_pic_s]];
-    [self.image2 sd_setImageWithURL:[NSURL URLWithString:frameModel.newsModel.thumbnail_pic_s02]];
-    [self.image3 sd_setImageWithURL:[NSURL URLWithString:frameModel.newsModel.thumbnail_pic_s03]];
+//    [self.image2 sd_setImageWithURL:[NSURL URLWithString:frameModel.newsModel.thumbnail_pic_s02]];
+//    [self.image3 sd_setImageWithURL:[NSURL URLWithString:frameModel.newsModel.thumbnail_pic_s03]];
     self.sourceLabel.text = frameModel.newsModel.author_name;
     self.dateLabel.text = frameModel.newsModel.date;
+    
 }
 
 - (UILabel *)newsLabel

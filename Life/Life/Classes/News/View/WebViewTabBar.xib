@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailViewController">
+            <connections>
+                <outlet property="gobackBtn" destination="HQv-HL-rHU" id="zBu-Bo-dFT"/>
+                <outlet property="goheadBtn" destination="WVh-ZY-5wd" id="cHi-z0-vyx"/>
+                <outlet property="refreshBtn" destination="Po3-G9-Osm" id="mcD-oU-VFD"/>
+                <outlet property="tab" destination="OOp-h6-PZ7" id="gQt-XS-vCl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OOp-h6-PZ7">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQv-HL-rHU">
+                    <rect key="frame" x="30" y="0.0" width="30" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ICR-qd-I5s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="◁"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Y7Q-P3-MCk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-ZY-5wd">
+                    <rect key="frame" x="141" y="0.0" width="30" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="▷"/>
+                    <connections>
+                        <action selector="goHead:" destination="-1" eventType="touchUpInside" id="nBa-XM-Gsn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po3-G9-Osm">
+                    <rect key="frame" x="253" y="0.0" width="30" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="🔄"/>
+                    <connections>
+                        <action selector="refresh:" destination="-1" eventType="touchUpInside" id="gaN-Sd-5ZE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.85430689102564106" green="0.8120400903830568" blue="0.79926139763138215" alpha="0.98399784485172426" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Po3-G9-Osm" firstAttribute="top" secondItem="OOp-h6-PZ7" secondAttribute="top" id="1nh-KC-y4P"/>
+                <constraint firstItem="WVh-ZY-5wd" firstAttribute="centerY" secondItem="OOp-h6-PZ7" secondAttribute="centerY" id="3rK-S5-WO3"/>
+                <constraint firstItem="WVh-ZY-5wd" firstAttribute="centerX" secondItem="OOp-h6-PZ7" secondAttribute="centerX" id="7Fa-AU-Gg4"/>
+                <constraint firstItem="HQv-HL-rHU" firstAttribute="leading" secondItem="OOp-h6-PZ7" secondAttribute="leading" constant="30" id="HHx-KU-6qe"/>
+                <constraint firstAttribute="trailing" secondItem="Po3-G9-Osm" secondAttribute="trailing" constant="30" id="WkP-eT-djK"/>
+                <constraint firstItem="WVh-ZY-5wd" firstAttribute="top" secondItem="HQv-HL-rHU" secondAttribute="top" id="YGM-Ky-DsX"/>
+                <constraint firstItem="HQv-HL-rHU" firstAttribute="top" secondItem="OOp-h6-PZ7" secondAttribute="top" id="ZqR-Zb-NaQ"/>
+                <constraint firstItem="WVh-ZY-5wd" firstAttribute="bottom" secondItem="HQv-HL-rHU" secondAttribute="bottom" id="bSM-eu-1aI"/>
+                <constraint firstAttribute="bottom" secondItem="Po3-G9-Osm" secondAttribute="bottom" id="m8x-gi-gcS"/>
+                <constraint firstAttribute="bottom" secondItem="HQv-HL-rHU" secondAttribute="bottom" id="xHd-dJ-IUq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="189.5" y="121"/>
+        </view>
+    </objects>
+</document>

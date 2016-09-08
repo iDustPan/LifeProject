@@ -103,8 +103,12 @@
     if (!_backScroll) {
         _backScroll = [[UIScrollView alloc] init];
         _backScroll.frame = CGRectMake(0, 0, kScreenWidth, 44);
-        _backScroll.backgroundColor = HexColor(0x7bffa6);
+//        _backScroll.backgroundColor = HexColor(0x54AEFF);
         _backScroll.showsHorizontalScrollIndicator = NO;
+        CALayer *separator = [CALayer layer];
+        separator.backgroundColor = HexColor(0xdcdcdc).CGColor;
+        separator.frame = CGRectMake(0, 43.5, kScreenWidth, 0.5);
+        [_backScroll.layer addSublayer:separator];
         [self addSubview:_backScroll];
     }
     return _backScroll;
