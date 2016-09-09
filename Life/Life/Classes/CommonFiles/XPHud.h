@@ -15,11 +15,12 @@
  * @author huangyibiao
  * @see SVProgressHUDMaskType
  */
-typedef NS_ENUM(NSInteger, HDFSVProgressHUDMaskType) {
-  HDFSVProgressHUDMaskTypeNone = 1, // allow user interactions while HUD is displayed
-  HDFSVProgressHUDMaskTypeClear, // don't allow
-  HDFSVProgressHUDMaskTypeBlack, // don't allow and dim the UI in the back of the HUD
-  HDFSVProgressHUDMaskTypeGradient // don't allow and dim the UI with a a-la-alert-view bg gradient
+typedef NS_ENUM(NSInteger, XPSVProgressHUDMaskType) {
+    XPSVProgressHUDMaskTypeNone = 1,  // default mask type, allow user interactions while HUD is displayed
+    XPProgressHUDMaskTypeClear,     // don't allow user interactions
+    XPProgressHUDMaskTypeBlack,     // don't allow user interactions and dim the UI in the back of the HUD, as on iOS 7 and above
+    XPProgressHUDMaskTypeGradient,  // don't allow user interactions and dim the UI with a a-la UIAlertView background gradient, as on iOS 6
+    XPProgressHUDMaskTypeCustom     // don't allow user interactions and dim the UI in the back of the HUD with a custom color
 };
 
 /**
@@ -29,7 +30,7 @@ typedef NS_ENUM(NSInteger, HDFSVProgressHUDMaskType) {
  *
  *  @since v0.1
  */
-@interface HDFHud : NSObject
+@interface XPHud : NSObject
 
 #pragma mark - SVProgressHUD加载相关
 /**
@@ -46,7 +47,7 @@ typedef NS_ENUM(NSInteger, HDFSVProgressHUDMaskType) {
  *
  * @see HDFSVProgressHUDMaskType
  */
-+ (void)showWithMaskType:(HDFSVProgressHUDMaskType)maskType;
++ (void)showWithMaskType:(XPSVProgressHUDMaskType)maskType;
 
 /**
  * 显示有转圈圈HUD，可指定文本。默认的maskType为HDFSVProgressHUDMaskTypeNone
@@ -64,7 +65,7 @@ typedef NS_ENUM(NSInteger, HDFSVProgressHUDMaskType) {
  *
  * @see HDFSVProgressHUDMaskType
  */
-+ (void)showWithStatus:(NSString *)status maskType:(HDFSVProgressHUDMaskType)maskType;
++ (void)showWithStatus:(NSString *)status maskType:(XPSVProgressHUDMaskType)maskType;
 
 /**
  * 显示有进度的转圈圈提示HUD，无文本提示，默认为HDFSVProgressHUDMaskTypeNone
@@ -96,7 +97,7 @@ typedef NS_ENUM(NSInteger, HDFSVProgressHUDMaskType) {
  */
 + (void)showProgress:(CGFloat)progress
               status:(NSString *)status
-            maskType:(HDFSVProgressHUDMaskType)maskType;
+            maskType:(XPSVProgressHUDMaskType)maskType;
 
 /**
  * 更换当前HUD的提示文本。一般是在多个请求时，一个请求完成后需要更换新的提示语，此时调用此API更换

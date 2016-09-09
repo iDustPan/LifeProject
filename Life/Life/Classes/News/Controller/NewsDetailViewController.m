@@ -9,17 +9,11 @@
 #import "NewsDetailViewController.h"
 #import "NewsModel.h"
 
-@interface NewsDetailViewController ()<UIWebViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UIView *tab;
-@property (weak, nonatomic) IBOutlet UIButton *refreshBtn;
-@property (weak, nonatomic) IBOutlet UIButton *gobackBtn;
-@property (weak, nonatomic) IBOutlet UIButton *goheadBtn;
-
+@interface NewsDetailViewController ()<UIWebViewDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSURL *URL;
-
 @property (nonatomic, strong) UIWebView *webView;
+
 @end
 
 @implementation NewsDetailViewController
@@ -46,24 +40,28 @@
 
 - (void)configureUI
 {
-    _tab = [[NSBundle mainBundle] loadNibNamed:@"WebViewTabBar" owner:self options:nil].lastObject;
-    _tab.frame = CGRectMake(0, kScreenHeight - 44, kScreenWidth, 44);
-    [self.view addSubview:_tab];
+    _webView = [[UIWebView alloc] init];
+    _webView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-44);
+    [self.view addSubview:_webView];
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImage:kImageWithName(@"backwrite") forState:UIControlStateNormal];
+    backBtn.frame = CGRectMake(0, 0, 24, 24);
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _webView = [[UIWebView alloc] init];
-    _webView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-44);
-    [self.view addSubview:_webView];
+    [self configureUI];
     NSURLRequest *request = [NSURLRequest requestWithURL:_URL];
     [_webView loadRequest:request];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+
+- (void)backButtonAction:(UIButton *)sender
 {
-    self.gobackBtn.enabled = [_webView canGoBack];
-    self.goheadBtn.enabled = [_webView canGoForward];
+    [self.webView canGoBack] ? [self.webView goBack] : [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

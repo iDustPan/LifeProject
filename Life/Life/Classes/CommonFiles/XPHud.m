@@ -6,25 +6,29 @@
 //
 //
 
-#import "HDFHud.h"
+#import "XPHud.h"
 
-@implementation HDFHud
+@implementation XPHud
 
 #pragma mark - SVProgressHUD加载相关
 + (void)show {
-  [SVProgressHUD show];
+
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD show];
 }
 
-+ (void)showWithMaskType:(HDFSVProgressHUDMaskType)maskType {
-  [SVProgressHUD showWithMaskType:maskType];
++ (void)showWithMaskType:(XPSVProgressHUDMaskType)maskType {
+    [SVProgressHUD setDefaultMaskType:maskType];
+    [SVProgressHUD show];
 }
 
 + (void)showWithStatus:(NSString *)status {
   [SVProgressHUD showWithStatus:status];
 }
 
-+ (void)showWithStatus:(NSString *)status maskType:(HDFSVProgressHUDMaskType)maskType {
-  [SVProgressHUD showWithStatus:status maskType:maskType];
++ (void)showWithStatus:(NSString *)status maskType:(XPSVProgressHUDMaskType)maskType {
+    [SVProgressHUD setDefaultMaskType:maskType];
+    [SVProgressHUD showWithStatus:status];
 }
 
 + (void)showProgress:(CGFloat)progress {
@@ -37,15 +41,16 @@
 
 + (void)showProgress:(CGFloat)progress
               status:(NSString *)status
-            maskType:(HDFSVProgressHUDMaskType)maskType {
-  [SVProgressHUD showProgress:progress status:status maskType:maskType];
+            maskType:(XPSVProgressHUDMaskType)maskType {
+    [SVProgressHUD setDefaultMaskType:maskType];
+    [SVProgressHUD showProgress:progress status:status];
 }
 
 + (void)setStatus:(NSString *)string {
     if ([SVProgressHUD isVisible]) {
         [SVProgressHUD setStatus:string];
     } else {
-        [self showWithStatus:string maskType:SVProgressHUDMaskTypeClear];
+        [self showWithStatus:string maskType:XPProgressHUDMaskTypeClear];
     }
 }
 

@@ -10,4 +10,6 @@
 
 @interface XPBaseViewController : UIViewController
 
+@property (nonatomic, copy) void(^popAction)();
+
 @end

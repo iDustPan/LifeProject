@@ -21,7 +21,7 @@
 		792122CB1D7D6E9A001C23AD /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122CA1D7D6E9A001C23AD /* UIView+Frame.m */; };
 		792122CE1D7D72AE001C23AD /* NSString+SizeToFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122CD1D7D72AE001C23AD /* NSString+SizeToFit.m */; };
 		792122D11D7D8B1E001C23AD /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122D01D7D8B1E001C23AD /* NewsModel.m */; };
-		792122D41D7D8F53001C23AD /* HDFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122D31D7D8F53001C23AD /* HDFHud.m */; };
+		792122D41D7D8F53001C23AD /* XPHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122D31D7D8F53001C23AD /* XPHud.m */; };
 		792122DA1D7DA8D7001C23AD /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122D91D7DA8D7001C23AD /* NewsListCell.m */; };
 		792122E01D7E624D001C23AD /* NewsListFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122DF1D7E624D001C23AD /* NewsListFrame.m */; };
 		792122E31D7EAF20001C23AD /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122E21D7EAF20001C23AD /* NewsDetailViewController.m */; };
@@ -31,7 +31,6 @@
 		7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */; };
 		799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9C1D7FEA9C0009919D /* DataManager.m */; };
 		799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9F1D8010110009919D /* XPBaseViewController.m */; };
-		799CDEA21D8011550009919D /* WebViewTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799CDEA11D8011550009919D /* WebViewTabBar.xib */; };
 		E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +66,8 @@
 		792122CD1D7D72AE001C23AD /* NSString+SizeToFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SizeToFit.m"; sourceTree = "<group>"; };
 		792122CF1D7D8B1E001C23AD /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		792122D01D7D8B1E001C23AD /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
-		792122D21D7D8F53001C23AD /* HDFHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDFHud.h; sourceTree = "<group>"; };
-		792122D31D7D8F53001C23AD /* HDFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDFHud.m; sourceTree = "<group>"; };
+		792122D21D7D8F53001C23AD /* XPHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPHud.h; sourceTree = "<group>"; };
+		792122D31D7D8F53001C23AD /* XPHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPHud.m; sourceTree = "<group>"; };
 		792122D81D7DA8D7001C23AD /* NewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListCell.h; sourceTree = "<group>"; };
 		792122D91D7DA8D7001C23AD /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListCell.m; sourceTree = "<group>"; };
 		792122DE1D7E624D001C23AD /* NewsListFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListFrame.h; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 		799CDE9C1D7FEA9C0009919D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		799CDE9E1D8010110009919D /* XPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseViewController.h; sourceTree = "<group>"; };
 		799CDE9F1D8010110009919D /* XPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPBaseViewController.m; sourceTree = "<group>"; };
-		799CDEA11D8011550009919D /* WebViewTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewTabBar.xib; sourceTree = "<group>"; };
 		CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Life.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8ED45B850634A9CC086D2D1 /* Pods-Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +187,8 @@
 		792122901D7D1840001C23AD /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
-				792122D21D7D8F53001C23AD /* HDFHud.h */,
-				792122D31D7D8F53001C23AD /* HDFHud.m */,
+				792122D21D7D8F53001C23AD /* XPHud.h */,
+				792122D31D7D8F53001C23AD /* XPHud.m */,
 				792122CC1D7D72AE001C23AD /* NSString+SizeToFit.h */,
 				792122CD1D7D72AE001C23AD /* NSString+SizeToFit.m */,
 				792122C91D7D6E9A001C23AD /* UIView+Frame.h */,
@@ -280,7 +278,6 @@
 				792122D91D7DA8D7001C23AD /* NewsListCell.m */,
 				792122E71D7EC04B001C23AD /* NewsCollectionCell.h */,
 				792122E81D7EC04B001C23AD /* NewsCollectionCell.m */,
-				799CDEA11D8011550009919D /* WebViewTabBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,7 +408,6 @@
 			files = (
 				792122801D7D11A8001C23AD /* Assets.xcassets in Resources */,
 				792122831D7D11A8001C23AD /* LaunchScreen.storyboard in Resources */,
-				799CDEA21D8011550009919D /* WebViewTabBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +471,7 @@
 				792122A91D7D1EA9001C23AD /* XPMainTabBarController.m in Sources */,
 				792122DA1D7DA8D7001C23AD /* NewsListCell.m in Sources */,
 				792122E91D7EC04B001C23AD /* NewsCollectionCell.m in Sources */,
-				792122D41D7D8F53001C23AD /* HDFHud.m in Sources */,
+				792122D41D7D8F53001C23AD /* XPHud.m in Sources */,
 				792122BE1D7D4A40001C23AD /* XPNet.m in Sources */,
 				792122CE1D7D72AE001C23AD /* NSString+SizeToFit.m in Sources */,
 				7921227B1D7D11A8001C23AD /* main.m in Sources */,
