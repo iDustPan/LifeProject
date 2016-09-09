@@ -10,6 +10,13 @@
 
 @implementation XPBaseViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

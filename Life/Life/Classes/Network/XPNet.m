@@ -52,7 +52,7 @@
     void(^myFail)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
         if (error != nil) {
             !fail ?: fail([error localizedDescription], nil);
-            [HDFHud showNetworkError:[error localizedDescription]];
+            [HDFHud showTip:[error localizedDescription]];
         }
     };
     
