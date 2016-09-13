@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790F34AD1D87ED4B002D3FEA /* JokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F34AC1D87ED4B002D3FEA /* JokeCell.m */; };
 		7921227B1D7D11A8001C23AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7921227A1D7D11A8001C23AD /* main.m */; };
 		792122801D7D11A8001C23AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7921227F1D7D11A8001C23AD /* Assets.xcassets */; };
 		792122831D7D11A8001C23AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792122811D7D11A8001C23AD /* LaunchScreen.storyboard */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		0ACE9B8A7F9EA66605DC6CCE /* Pods-Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.release.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.release.xcconfig"; sourceTree = "<group>"; };
+		790F34AB1D87ED4B002D3FEA /* JokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeCell.h; sourceTree = "<group>"; };
+		790F34AC1D87ED4B002D3FEA /* JokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeCell.m; sourceTree = "<group>"; };
 		792122761D7D11A8001C23AD /* Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7921227A1D7D11A8001C23AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7921227F1D7D11A8001C23AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 		792122B41D7D20F4001C23AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				790F34AB1D87ED4B002D3FEA /* JokeCell.h */,
+				790F34AC1D87ED4B002D3FEA /* JokeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */,
 				792122CB1D7D6E9A001C23AD /* UIView+Frame.m in Sources */,
 				7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */,
+				790F34AD1D87ED4B002D3FEA /* JokeCell.m in Sources */,
 				792122E61D7EB597001C23AD /* NewsCollectionContainer.m in Sources */,
 				792122E31D7EAF20001C23AD /* NewsDetailViewController.m in Sources */,
 				792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */,

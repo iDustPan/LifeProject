@@ -14,7 +14,6 @@
 #define kLifeBaseURL [NSURL URLWithString:@"http://v.juhe.cn"]
 
 
-
 @interface XPNet ()
 
 @property (nonatomic, strong) AFHTTPSessionManager *manager;

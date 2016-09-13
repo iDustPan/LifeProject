@@ -17,17 +17,6 @@
 @end
 
 @implementation NewsDetailViewController
-- (IBAction)goBack:(UIButton *)sender {
-    [_webView goBack];
-}
-
-- (IBAction)goHead:(UIButton *)sender {
-    [_webView goForward];
-}
-
-- (IBAction)refresh:(UIButton *)sender {
-    [_webView reload];
-}
 
 - (instancetype)initWithURL:(NSURL *)URL
 {
@@ -57,7 +46,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:_URL];
     [_webView loadRequest:request];
 }
-
 
 - (void)backButtonAction:(UIButton *)sender
 {

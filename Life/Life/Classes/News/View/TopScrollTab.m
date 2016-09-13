@@ -54,20 +54,16 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.font = kFontWithSize(15);
     
-    CGSize labelSize = [title size2FitWithFont:label.font containerWidth:MAXFLOAT mutableLines:NO];
-
-    label.frame = CGRectMake(idx * (labelSize.width + 16),
-                             (_backScroll.height - labelSize.height) * 0.5,
-                             labelSize.width + 16,
-                             labelSize.height);
-    if (_titles.count - 1 != idx) {
-        [label showLineWithRect:CGRectMake(label.width - 1, 0, 1, label.height) inSuperView:label];
+    label.frame = CGRectMake(idx * 46, 0, 46, 44);
+//    NSLog(@"%@", NSStringFromCGRect(label.frame));
+    if (_titles.count - 1 != idx) { 
+        [self showLineWithRect:CGRectMake(label.width - 1, label.height * 0.3, 1, label.height * 0.4) inSuperView:label];
     }
     
     [_backScroll addSubview:label];
     
     if (_titles.count - 1 == idx) {
-        _backScroll.contentSize = CGSizeMake((labelSize.width + 16) * _titles.count, _backScroll.height);
+        _backScroll.contentSize = CGSizeMake(label.width * _titles.count, 44);
     }
     
 }
@@ -102,13 +98,14 @@
 {
     if (!_backScroll) {
         _backScroll = [[UIScrollView alloc] init];
+        _backScroll.bounces = NO;
         _backScroll.frame = CGRectMake(0, 0, kScreenWidth, 44);
-//        _backScroll.backgroundColor = HexColor(0x54AEFF);
         _backScroll.showsHorizontalScrollIndicator = NO;
+        
         CALayer *separator = [CALayer layer];
         separator.backgroundColor = HexColor(0xdcdcdc).CGColor;
         separator.frame = CGRectMake(0, 43.5, kScreenWidth, 0.5);
-        [_backScroll.layer addSublayer:separator];
+        [self.layer addSublayer:separator];
         [self addSubview:_backScroll];
     }
     return _backScroll;

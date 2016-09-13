@@ -239,8 +239,10 @@ UIInterfaceOrientation TTDeviceOrientation() {
 
 - (void)showLineWithRect:(CGRect)rect inSuperView:(UIView *)superView
 {
+//    NSLog(@"%@", NSStringFromCGRect(rect));
     CALayer *layer = [CALayer layer];
     layer.backgroundColor = [UIColor colorWithRed:220.0/255 green:220.0/255 blue:220.0/255 alpha:1.0].CGColor;
+//    layer.backgroundColor = [UIColor redColor].CGColor;
     layer.frame = rect;
     [superView.layer addSublayer:layer];
 }
