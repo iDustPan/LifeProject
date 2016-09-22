@@ -35,6 +35,13 @@
 
 - (void)requestAtPath:(NSString *)path type:(RequestType)type params:(NSDictionary *)parame success:(SuccessBlock)success failBlock:(FailBlock)fail
 {
+    NSString *urlStr = [kLifeBaseURL.absoluteString stringByAppendingString:path];
+    
+    [self requestAtURL:urlStr type:type params:parame success:success failBlock:fail];
+}
+
+- (void)requestAtURL:(NSString *)URLString type:(RequestType)type params:(NSDictionary *)parame success:(SuccessBlock)success failBlock:(FailBlock)fail
+{
     [XPHud show];
     void(^mySuccess)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (!kIsInvalidDict(responseObject)) {
@@ -55,17 +62,15 @@
         }
     };
     
-    NSString *urlStr = [kLifeBaseURL.absoluteString stringByAppendingString:path];
-    
     switch (type) {
         case Get:
         {
-            [self.manager GET:urlStr parameters:parame progress:nil success:mySuccess failure:myFail];
+            [self.manager GET:URLString parameters:parame progress:nil success:mySuccess failure:myFail];
         }
             break;
         case Post:
         {
-            [self.manager POST:urlStr parameters:parame progress:nil success:mySuccess failure:myFail];
+            [self.manager POST:URLString parameters:parame progress:nil success:mySuccess failure:myFail];
         }
             break;
         default:
@@ -73,6 +78,7 @@
     }
     
     AppLog(@"URL地址:%@", self.manager.tasks[0].originalRequest.URL.absoluteString);
+
 }
 
 - (AFHTTPSessionManager *)manager

@@ -30,6 +30,7 @@
 		792122E91D7EC04B001C23AD /* NewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122E81D7EC04B001C23AD /* NewsCollectionCell.m */; };
 		792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122EB1D7ED15D001C23AD /* NewsListViewController.m */; };
 		7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */; };
+		7981FDF21D93811400C58B75 /* JokeAndPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FDF11D93811400C58B75 /* JokeAndPicModel.m */; };
 		799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9C1D7FEA9C0009919D /* DataManager.m */; };
 		799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9F1D8010110009919D /* XPBaseViewController.m */; };
 		E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */; };
@@ -85,6 +86,8 @@
 		792122EB1D7ED15D001C23AD /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 		792438291D8143E4002B4CE1 /* XPBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseNavViewController.h; sourceTree = "<group>"; };
 		7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPBaseNavViewController.m; sourceTree = "<group>"; };
+		7981FDF01D93811400C58B75 /* JokeAndPicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeAndPicModel.h; sourceTree = "<group>"; };
+		7981FDF11D93811400C58B75 /* JokeAndPicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeAndPicModel.m; sourceTree = "<group>"; };
 		799CDE9B1D7FEA9C0009919D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		799CDE9C1D7FEA9C0009919D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		799CDE9E1D8010110009919D /* XPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPBaseViewController.h; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 		792122B31D7D20F4001C23AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7981FDF01D93811400C58B75 /* JokeAndPicModel.h */,
+				7981FDF11D93811400C58B75 /* JokeAndPicModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				790F34AD1D87ED4B002D3FEA /* JokeCell.m in Sources */,
 				792122E61D7EB597001C23AD /* NewsCollectionContainer.m in Sources */,
 				792122E31D7EAF20001C23AD /* NewsDetailViewController.m in Sources */,
+				7981FDF21D93811400C58B75 /* JokeAndPicModel.m in Sources */,
 				792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */,
 				799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */,
 			);

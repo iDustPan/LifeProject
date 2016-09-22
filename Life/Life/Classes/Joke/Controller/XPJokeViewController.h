@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XPJokeViewController : UIViewController
+@interface XPJokeViewController : XPBaseViewController
 
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class JokeModel;
+
 @interface JokeCell : UITableViewCell
+
+@property (nonatomic, strong) JokeModel *jokemodel;
 
 @end

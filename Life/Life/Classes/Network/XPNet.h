@@ -58,4 +58,5 @@ typedef void(^FailBlock)(NSString *errorMsg, XPResponse *reponse);
 
 - (void)requestAtPath:(NSString *)path type:(RequestType)type params:(NSDictionary *)parame success:(SuccessBlock)success failBlock:(FailBlock)fail;
 
+- (void)requestAtURL:(NSString *)URLString type:(RequestType)type params:(NSDictionary *)parame success:(SuccessBlock)success failBlock:(FailBlock)fail;
 @end
