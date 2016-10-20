@@ -31,25 +31,10 @@
 		792122EC1D7ED15D001C23AD /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792122EB1D7ED15D001C23AD /* NewsListViewController.m */; };
 		7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7924382A1D8143E4002B4CE1 /* XPBaseNavViewController.m */; };
 		7981FDF21D93811400C58B75 /* JokeAndPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FDF11D93811400C58B75 /* JokeAndPicModel.m */; };
-		7981FDF51D93C66300C58B75 /* JokeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FDF41D93C66300C58B75 /* JokeDetailViewController.m */; };
-		7981FDF81D93D0DC00C58B75 /* UIColor+HDFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FDF71D93D0DC00C58B75 /* UIColor+HDFColor.m */; };
-		7981FE031D93DD3500C58B75 /* PushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FE001D93DD3500C58B75 /* PushAnimator.m */; };
-		7981FE041D93DD3500C58B75 /* popAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7981FE021D93DD3500C58B75 /* popAnimator.m */; };
 		799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9C1D7FEA9C0009919D /* DataManager.m */; };
 		799CDEA01D8010110009919D /* XPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799CDE9F1D8010110009919D /* XPBaseViewController.m */; };
-		79D409951DB85E0800AF2636 /* LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D409941DB85E0800AF2636 /* LifeTests.m */; };
 		E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4BBFD41E94B2C8AEE05A21 /* libPods-Life.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		79D409971DB85E0800AF2636 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7921226E1D7D11A8001C23AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 792122751D7D11A8001C23AD;
-			remoteInfo = Life;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0ACE9B8A7F9EA66605DC6CCE /* Pods-Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.release.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,13 +102,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A947CE0FE93F3425A3A445 /* libPods-Life.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79D4098F1DB85E0800AF2636 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +201,6 @@
 				792122CA1D7D6E9A001C23AD /* UIView+Frame.m */,
 				792122C31D7D5A8F001C23AD /* SpeedyCode.h */,
 				792122C81D7D6DA9001C23AD /* SpeedyFrame.h */,
-				7981FDF61D93D0DC00C58B75 /* UIColor+HDFColor.h */,
-				7981FDF71D93D0DC00C58B75 /* UIColor+HDFColor.m */,
 			);
 			path = CommonFiles;
 			sourceTree = "<group>";
@@ -243,7 +219,6 @@
 		792122981D7D1C33001C23AD /* Joke */ = {
 			isa = PBXGroup;
 			children = (
-				7981FDFB1D93DBAC00C58B75 /* Vendor */,
 				792122B01D7D20F4001C23AD /* Controller */,
 				792122B31D7D20F4001C23AD /* Model */,
 				792122B41D7D20F4001C23AD /* View */,
@@ -318,8 +293,6 @@
 			children = (
 				792122B11D7D20F4001C23AD /* XPJokeViewController.h */,
 				792122B21D7D20F4001C23AD /* XPJokeViewController.m */,
-				7981FDF31D93C66300C58B75 /* JokeDetailViewController.h */,
-				7981FDF41D93C66300C58B75 /* JokeDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -363,17 +336,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		7981FDFB1D93DBAC00C58B75 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				7981FDFF1D93DD3500C58B75 /* PushAnimator.h */,
-				7981FE001D93DD3500C58B75 /* PushAnimator.m */,
-				7981FE011D93DD3500C58B75 /* popAnimator.h */,
-				7981FE021D93DD3500C58B75 /* popAnimator.m */,
-			);
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		799CDE9A1D7FEA710009919D /* Vendor */ = {
@@ -459,13 +421,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79D409901DB85E0800AF2636 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -521,8 +476,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7981FDF81D93D0DC00C58B75 /* UIColor+HDFColor.m in Sources */,
-				7981FE031D93DD3500C58B75 /* PushAnimator.m in Sources */,
 				792122E01D7E624D001C23AD /* NewsListFrame.m in Sources */,
 				792122C61D7D6AAB001C23AD /* TopScrollTab.m in Sources */,
 				792122A91D7D1EA9001C23AD /* XPMainTabBarController.m in Sources */,
@@ -538,12 +491,10 @@
 				792122D11D7D8B1E001C23AD /* NewsModel.m in Sources */,
 				792122AF1D7D20E8001C23AD /* XPNewsViewController.m in Sources */,
 				792122BB1D7D20FB001C23AD /* XPMineViewController.m in Sources */,
-				7981FDF51D93C66300C58B75 /* JokeDetailViewController.m in Sources */,
 				799CDE9D1D7FEA9C0009919D /* DataManager.m in Sources */,
 				792122CB1D7D6E9A001C23AD /* UIView+Frame.m in Sources */,
 				7924382B1D8143E4002B4CE1 /* XPBaseNavViewController.m in Sources */,
 				790F34AD1D87ED4B002D3FEA /* JokeCell.m in Sources */,
-				7981FE041D93DD3500C58B75 /* popAnimator.m in Sources */,
 				792122E61D7EB597001C23AD /* NewsCollectionContainer.m in Sources */,
 				792122E31D7EAF20001C23AD /* NewsDetailViewController.m in Sources */,
 				7981FDF21D93811400C58B75 /* JokeAndPicModel.m in Sources */,

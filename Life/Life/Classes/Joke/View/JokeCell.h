@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) JokeModel *jokemodel;
 
-@property (nonatomic, strong, readonly) UIView *imgView;
-
 @end

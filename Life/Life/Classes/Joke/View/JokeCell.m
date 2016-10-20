@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) UILabel *jokeLabel;
 
-@property (nonatomic, strong, readwrite) UIImageView *imgView;
+@property (nonatomic, strong) UIImageView *imgView;
 
 @property (nonatomic, assign) CGFloat imageHeight;
 
@@ -65,7 +65,6 @@
     _imgView.contentMode = UIViewContentModeScaleAspectFill;
     _imgView.clipsToBounds = YES;
     [_background addSubview:_imgView];
-    
     
     [self p_creatConstraint];
 }
