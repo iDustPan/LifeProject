@@ -7,6 +7,9 @@
 //
 
 #import "XPJokeViewController.h"
+#import "JokeDetailViewController.h"
+
+#import "PushAnimator.h"
 
 #import "JokeAndPicModel.h"
 
@@ -14,9 +17,9 @@
 
 
 
-@interface XPJokeViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface XPJokeViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) UITableView *jokeTableView;
+@property (nonatomic, strong, readwrite) UITableView *jokeTableView;
 @property (nonatomic, strong) NSArray *dataSource;
 
 @property (nonatomic, assign) NSInteger currentPage;
@@ -37,6 +40,12 @@ static NSString * const kJokeKey = @"1ab6fb87c1405ae766ecf36b20c0207c";
     self.dataSource = @[];
     [self p_initialRequstParame];
     [self addRefreshControll];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
 }
 
 - (void)p_initialRequstParame
@@ -104,6 +113,7 @@ static NSString * const kJokeKey = @"1ab6fb87c1405ae766ecf36b20c0207c";
     _jokeTableView.backgroundColor =HexColor(0xEBEBF1);
     _jokeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _jokeTableView.dataSource = self;
+    _jokeTableView.delegate = self;
     [self.view addSubview:_jokeTableView];
     
     [self.view setNeedsUpdateConstraints];
@@ -131,7 +141,23 @@ static NSString * const kJokeKey = @"1ab6fb87c1405ae766ecf36b20c0207c";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    JokeModel *model = self.dataSource[indexPath.row];
+    JokeDetailViewController *jokeDetailVC = [[JokeDetailViewController alloc] initWithJokeModel:model];
+    [self.navigationController pushViewController:jokeDetailVC animated:YES];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    return [PushAnimator new];
+}
+
+- (JokeCell *)tableViewCellForModel:(JokeModel *)model
+{
+    NSInteger index = [self.dataSource indexOfObject:model];
+    if (index == NSNotFound) {
+        return nil;
+    }
+    return (JokeCell *)[self.jokeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
 }
 
 @end
